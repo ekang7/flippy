@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style = "width:100%;height:100%;">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>flippy</title>
+    <link rel="stylesheet" href="main.css"
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 
@@ -30,16 +32,140 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 </script> 
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"><!--icons-->
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'> <!--random button font-->
 
 <link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="buttons.css">
+<link rel="stylesheet" href="cards.css">
 <script src = "app.js" defer></script> <!--//will load scripts after all body elements have loaded--> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--jquery-->
 
 </head>
-<body>
+
+
+<body style = "width:100%;height:100%;">
+  <section id = "signedoutpage" style = "width:100%;height:100%;">
+  <h1> Welcome to Flippy!</h1>
+  <div style = "display:flex;justify-content: center;"><img src = "assets/logo.JPG" alt="logo" width="300" height="200">
+  </div>
+  <div style = "display:flex;justify-content: center;margin-top:20px;">
+    <button id = "signinbutton" class = "btn btn-1">Please sign in with Google</button>
+  
+  </div>
+  
+  
+  </section>
+  
+  <section id = "signedinpage" hidden = "true">
+    
+    
+
   <div id = "navBar">
-    <div id = "Home">Home</div>
-    <div id = "About">About</div>
+    <img src = "assets/logo.JPG">
+    <div id = "buttons">
+      <a href = "#topics">Topics</a>
+      <a href = "#about">About</a>
+      
+      <button id = "signoutbutton" class = "btn btn-1" style = "line-height:75px;"><div id = "userinfo" ></div></button>
+    </div>
+  </div>
+  <h1 id = "topics" style = "padding:0px 100px;">Topics</h1>
+  <div id = "mainBody" style = "padding:0px 100px;">
+    
+    <div class = "topic compressed">
+        <button class = "dropDown btn btn-1 btn-sep icon-caret-up" onClick = "toggleButton(this);" style = "display:block;">Taxes</button>
+        <div onclick = "questionClick(this)" class = "question">Should we raise taxes?</div>
+        <div onclick = "questionClick(this)" class = "question">Should we lower taxes?</div>
+        <div onclick = "questionClick(this)" class = "question">Are taxes too high?</div>
+    </div>
+    <div class = "topic compressed">
+      <button class = "dropDown btn btn-1 btn-sep icon-caret-up" onClick = "toggleButton(this);" style = "display:block;">Healthcare</button>
+      <div onclick = "questionClick(this)" class = "question">Should there be universal healthcare in the US?</div>
+      <div onclick = "questionClick(this)" class = "question">What role should the government play in a private citizen's healthcare costs?</div>
+      <div onclick = "questionClick(this)" class = "question">Should employers be required by law to offer health insurance to employees?</div>
+    </div>
+    <div class = "topic compressed">
+      <button class = "dropDown btn btn-1 btn-sep icon-caret-up" onClick = "toggleButton(this);" style = "display:block;">Gun Control</button>
+      <div onclick = "questionClick(this)" class = "question">Should there be more gun control laws enstated to reduce the amount of gun violence?</div>
+      <div onclick = "questionClick(this)" class = "question">Is the government begining to infringe on our 2nd ammendment rights if we enstate more preventative gun laws?</div>
+      <div onclick = "questionClick(this)" class = "question">How much of the responsibility falls on the public vs the government to reduce gun violence?</div>
+    </div>
+    <div class = "topic compressed">
+      <button class = "dropDown btn btn-1 btn-sep icon-caret-up" onClick = "toggleButton(this);" style = "display:block;">Global Climate Change</button>
+      <div onclick = "questionClick(this)" class = "question">Is climate change a pressing issue that should be on our list of prioties to solve?</div>
+      <div onclick = "questionClick(this)" class = "question">What role should the government play in terms of limiting climate change</div>
+      <div onclick = "questionClick(this)" class = "question">How can climate change be prevented from a social and big buisness standpoint?</div>
+    </div>
+    <div class = "topic compressed">
+      <button class = "dropDown btn btn-1 btn-sep icon-caret-up" onClick = "toggleButton(this);" style = "display:block;">Social Secuirty</button>
+      <div onclick = "questionClick(this)" class = "question">Are there real benefits for people paying social security?</div>
+      <div onclick = "questionClick(this)" class = "question">Should the government be involved in planning for its private citizen's retirement?</div>
+      <div onclick = "questionClick(this)" class = "question">Is social secuirty a needed measure in today's world?</div>
+    </div>
+    <div class = "topic compressed">
+      <button class = "dropDown btn btn-1 btn-sep icon-caret-up" onClick = "toggleButton(this);" style = "display:block;">School Curriculum</button>
+      <div onclick = "questionClick(this)" class = "question">Should schools make STEM classes a mandatory part of the curriculum?</div>
+      <div onclick = "questionClick(this)" class = "question">Should students be forced to take classes that they aren't interested in(i.e history, chemistry)?</div>
+      <div onclick = "questionClick(this)" class = "question">Should physical education be a required part of the school curriculum?</div>
+    </div>
+    <div class = "topic compressed">
+      <button class = "dropDown btn btn-1 btn-sep icon-caret-up" onClick = "toggleButton(this);" style = "display:block;">Enter Your Own Questions</button>
+      <form>
+        <label for="topic">Enter Topic:</label><br>
+        <input type="text" id="topic" name="topic"><br>
+        <label for="entQues">Enter Question</label><br>
+        <input type="text" id="entQues" name="entQues"><br>
+        <input type="submit" value="Submit">
+      </form>
+        
+    </div>
   </div>
 
+  <h1 id = "about"style = "padding:0px 100px;" >About</h1>
+  <h2 id="description" style="font-size:15px; padding:0px 100px;">Hi, welcome to Flippy! Flippy is an interactive website designed to stimulate deep, thought provoking conversation between two individuals. A person is able to choose a question from a topic area that interests them. They will then be paired with someone else who shares the same interest in debating that question. Each will be given a card where they can write down their initial thoughts on the question. After both have completed their response, they can 'Flippy' the card and see each others thoughts. At this point, the two individuals will enter a private chat room and can discuss their topics at length. To help support your argument we have provided a menu on the side filled with evidence from reputable sources to back up your statements. Once you are done with your discussion, you can simply end click 'End Flippy' and exit the chat.   </h2>
+  
+  <!--CARD-->>
+
+  <div class = "card">
+
+    <div class="card__inner">
+
+			<div class="card__face card__face--front">
+        <div class="card__content">
+          <div class="card__header"> 
+              <h2>[insert prompt here]</h2>
+          </div>
+          <div class="card__body">
+            <form class="box" id = "chatForm" onsubmit="sendChat()" autocomplete="off" style = "scroll-behavior: smooth;">
+            <input id = "chatInput" type="text" name="cHInput" placeholder="your answer...">
+            <button type="submit" value="" id = "chatSend" class = "fas fa-paper-plane" value ="Login">Submit</submit>
+          </form>
+          </div>
+        </div>
+      </div>
+
+
+			<div class="card__face card__face--back">
+				<div class="card__content">
+					<div class="card__header">
+						<h2>[insert prompt here]</h2>
+					</div>
+					<div class="card__body">
+						<h3>User Name</h3>
+						<p>User's answer: Lorem ipsum <strong>dolor</strong> sit amet, consectetur <strong>adipiscing</strong> elit. Sed id erat a magna lobortis dictum. Nunc est arcu, <strong>lacinia</strong> quis sapien placerat, <strong>laoreet</strong> tincidunt nulla.</p>
+					</div>
+				</div>
+			</div>
+      
+		</div>
+    
+  </div>
+  
+</section>
+
+<script src="main.js"></script>
+  
+  
 </body>
 </html>

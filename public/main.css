@@ -1,7 +1,94 @@
+:root { 
+    --primary: #FFCE00;
+    --secondary: #FE4880;
+    --dark: #212121;
+    --light: #F3F3F3;
+    --navHeight:125px;
+    --lightThird: #1a9cfe;
+    --darkThird: #4168cd;
+}
+html {
+    scroll-behavior: smooth;
+}
+.centered {
+        width: 420px;
+        height:70px;
+        border: 1px solid Black;
+        text-align: left;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left:-210px;
+        margin-top:-35px;   
+        position:fixed;
+}
+
+body{
+    font-family: montserrat, sans-serif;
+    width: 100%;
+    background-color: var(--dark);
+    color:var(--light);
+    margin:0px;
+    min-height: 100vh;
+}
+
 #navBar{
     display:flex;
     width:100%;
-    height:125px;
+    height:var(--navHeight);
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: var(--primary);
+    overflow: hidden;
+}
+#buttons{
+    /*background-color: var(--light);*/
+    display:flex;
+    height:100%;
     justify-content: flex-end;
     align-items: stretch;
+    border: 2px black;
 }
+#buttons *{
+    text-align: center;
+    line-height: var(--navHeight);
+    padding: 0px 30px;
+    background-color: var(--secondary);
+    margin:0px 5px;
+   
+}
+#buttons *:last-child{
+    margin-right:0px;
+}
+#logo{
+    background-color: var(--secondary);
+    line-height: var(--navHeight);
+}
+h1 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
+a { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; text-decoration: none;}
+
+.topic{
+    margin:10px;
+}
+
+.question { color: var(--lightThird); font-family: 'Raleway',sans-serif; font-size: 15px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: left;}
+.question:hover { color: var(--darkThird); cursor: pointer;}
+
+.compressed *{
+    display: none;
+}
+.decompressed *{
+    display:block;
+}
+
+#description {
+    font-family: montserrat, sans-serif;
+    color: white;
+}
+
+#mainBody{
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+}
+
