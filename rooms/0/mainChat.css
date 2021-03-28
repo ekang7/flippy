@@ -11,7 +11,7 @@
     scroll-behavior: smooth;
  }
  body{
-    font-family: 'Anonymous Pro', monospace;
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
     background-color: var(--dark);
     color:var(--light);

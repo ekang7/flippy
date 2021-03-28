@@ -13,11 +13,50 @@ function toggleButton(element){
         element.classList.add("icon-caret-up");
     }
 }
+ 
+var listOfQuestions = document.getElementsByClassName('question');
+var qNum = -1;
 
-function questionClick(element){
-    console.log("hi");
-    window.location = window.location + "chat.html";
+//happens whenever a quesiton is clicked.
+function questionClick(element){ 
+    
+    
+    qNum = listOfQuestions.indexOf(element);
+    window.location = window.location+"/"+qNum; 
+    /* var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200) {
+            var AJAXResponse = "" + this.responseText;
+            if(AJAXResponse){
+                goToRoom(AJAXResponse);
+            }
+        }
+    }
+    xhttp.open("GET","addToQueue.php?qNum=" + qNum + "&id=" + id);
+    xhttp.send();*/
 }
+
+//make this function happen every 0.5 seconds after questionClick
+function checkQueue(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200) {
+            var AJAXResponse = "" + this.responseText;
+            if(AJAXResponse){
+                goToRoom(AJAXResponse);
+            }
+        }
+    }
+    xhttp.open("GET","checkMatch.php?qNum=" + qNum);
+    xhttp.send();
+}
+
+function goToRoom(code){
+    window.location = window.location.href + "/room/" + code;
+}
+
+
+
 
 /* card */
 
@@ -27,7 +66,7 @@ card.addEventListener("click", function (e) {
   card.classList.toggle('is-flipped');
 });
 
-
+ 
 /* FORM */ 
 
 function sendChat(){
@@ -37,5 +76,9 @@ function sendChat(){
         document.getElementById("chatBody").innerHTML += "<div class = myChat>" + escapeHTML(newChat) + "</div>";
     });
     }
+}
+function repeat(){
+    setTimeout(function(){ alert("Hello"); }, 500);
+
 }
 

@@ -5,33 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>flippy</title>
-    <link rel="stylesheet" href="main.css"
+    <link rel="stylesheet" href="main.css">
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyCMKoj0zbC5i4BnVCGs9ddUJrNjfQNMPVc",
-    authDomain: "flippy-8b360.firebaseapp.com",
-    projectId: "flippy-8b360",
-    storageBucket: "flippy-8b360.appspot.com",
-    messagingSenderId: "834542349775",
-    appId: "1:834542349775:web:0b7dad6120834c8d1eb6ba",
-    measurementId: "G-H0MNKLE7R8"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script> 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"><!--icons-->
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'> <!--random button font-->
 
@@ -40,29 +17,51 @@
 <link rel="stylesheet" href="cards.css">
 <script src = "app.js" defer></script> <!--//will load scripts after all body elements have loaded--> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--jquery-->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
 
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+  <script src = "app.js" defer></script>
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyA-JN4fefd1ris89JNGB9YUe_CExt2V2sk",
+      authDomain: "flippy-a4ee4.firebaseapp.com",
+      projectId: "flippy-a4ee4",
+      storageBucket: "flippy-a4ee4.appspot.com",
+      messagingSenderId: "305518496632",
+      appId: "1:305518496632:web:06631283d59d4b24ac968d",
+      measurementId: "G-5QQ0F892S6"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 </head>
 
 
 <body style = "width:100%;height:100%;">
   <section id = "signedoutpage" style = "width:100%;height:100%;">
-  <h1> Welcome to Flippy!</h1>
-  <div style = "display:flex;justify-content: center;"><img src = "assets/logo.JPG" alt="logo" width="300" height="200">
-  </div>
-  <div style = "display:flex;justify-content: center;margin-top:20px;">
-    <button id = "signinbutton" class = "btn btn-1">Please sign in with Google</button>
-  
-  </div>
-  
-  
-  </section>
-  
-  <section id = "signedinpage" hidden = "true">
+    <h1> Welcome to Flippy!</h1>
+    <div style = "display:flex;justify-content: center;"><img src = "/assets/logo.JPG" alt="logo" width="300" height="200">
+    </div>
+    <div style = "display:flex;justify-content: center;margin-top:20px;">
+      <button id = "signinbutton" class = "btn btn-1">Please sign in with Google</button>
+    
+    </div>
     
     
-
+    </section>
+    <section id = "signedinpage" style =  "width:100%;height:100%;">
+    
+  
   <div id = "navBar">
-    <img src = "assets/logo.JPG">
+    <img src = "/assets/logo.JPG">
     <div id = "buttons">
       <a href = "#topics">Topics</a>
       <a href = "#about">About</a>
@@ -134,7 +133,7 @@
 			<div class="card__face card__face--front">
         <div class="card__content">
           <div class="card__header"> 
-              <h2>[insert prompt here]</h2>
+              <h2>[hi prompt here]</h2>
           </div>
           <div class="card__body">
             <form class="box" id = "chatForm" onsubmit="sendChat()" autocomplete="off" style = "scroll-behavior: smooth;">
@@ -142,6 +141,11 @@
             <button type="submit" value="" id = "chatSend" class = "fas fa-paper-plane" value ="Login">Submit</submit>
           </form>
           </div>
+
+          <div>
+            <img src= "/chat/logoTransparent.PNG" alt="flipImg"  >
+          </div>
+
         </div>
       </div>
 
@@ -155,6 +159,12 @@
 						<h3>User Name</h3>
 						<p>User's answer: Lorem ipsum <strong>dolor</strong> sit amet, consectetur <strong>adipiscing</strong> elit. Sed id erat a magna lobortis dictum. Nunc est arcu, <strong>lacinia</strong> quis sapien placerat, <strong>laoreet</strong> tincidunt nulla.</p>
 					</div>
+
+          <div>
+            <img src= "/chat/logoTransparent.PNG" alt="flipImg"  >
+           
+          </div>
+
 				</div>
 			</div>
       
@@ -162,8 +172,8 @@
     
   </div>
   
-</section>
 
+</section>
 <script src="main.js"></script>
   
   

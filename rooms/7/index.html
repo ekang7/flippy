@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" style = "width:100%;height:100%;">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>flippy</title>
+ 
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="mainChat.css">
+   <link rel="stylesheet" href="card.css">
+   <!--fonts-->
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+ 
+ 
+</head>
+ 
+ 
+<body style = "width:100%;height:100%;">
+ <div id = "navBodyContainer" style = "display: flex;width: 100%;height: 100%;flex-direction: column;align-items: stretch;align-content: stretch;">
+   <div id = "navBar">
+     <h1>Why is healthcare important?</h1>
+   </div>
+   <div id = "moreInfoBodyContainer" style="flex-grow:1;display: flex;align-items: stretch;align-content: stretch;">
+     <div id = "moreInfo">
+       <div id = "more" style = "writing-mode: vertical-lr;text-orientation: mixed;">more</div>
+       <i class="fa fa-caret-right"></i>
+       <div id = "info" class = "flip-horizontal flip-vertical" style = "writing-mode: vertical-lr;text-orientation: mixed;">info</div>
+     </div>
+     <div id = "bodySendChatContainer" style = "flex-grow:1;display: flex;flex-direction: column;align-items: stretch;align-content: stretch;">
+       <div id = "body" style = "flex-grow:1;"></div>
+       <div id = "sendChatBar"></div>
+     </div>
+   </div>
+ </div>
+ 
+ <!--CARD-->>
+<div class = "card">
+ <div class="card__inner">
+ 
+   <div class="card__face card__face--front">
+     <div class="card__content">
+       <div class="card__header">
+           <h2>[hi prompt here]</h2>
+       </div>
+       <div class="card__body">
+         <form class="box" id = "chatForm" onsubmit="sendChat()" autocomplete="off" style = "scroll-behavior: smooth;">
+         <input id = "chatInput" type="text" name="cHInput" placeholder="your answer...">
+         <button type="submit" value="" id = "chatSend" class = "fas fa-paper-plane" value ="Login">Submit</submit>
+        
+       </form>
+       <div>
+         <img src= "logoTransparent.PNG" alt="flipImg">
+         </div>
+       </div>
+     </div>
+   </div>
+ 
+ 
+   <div class="card__face card__face--back">
+     <div class="card__content">
+       <div class="card__header">
+         <h2>[insert prompt here]</h2>
+       </div>
+       <div class="card__body">
+         <h3>User Name</h3>
+         <p>User's answer: Lorem ipsum <strong>dolor</strong> sit amet, consectetur <strong>adipiscing</strong> elit. Sed id erat a magna lobortis dictum. Nunc est arcu, <strong>lacinia</strong> quis sapien placerat, <strong>laoreet</strong> tincidunt nulla.</p>
+         <div>
+         <img src= "logoTransparent.PNG" alt="flipImg"  >
+        
+         </div>
+       </div>
+     </div>
+   </div>
+ 
+ </div>
+</div>
+ 
+</section>
+ 
+<script src="chat.js"></script>
+ </body>
+</html>
+
