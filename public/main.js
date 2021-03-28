@@ -68,7 +68,7 @@ card.addEventListener("click", function (e) {
 
  
 /* FORM */ 
-
+/*
 function sendChat(){
     if(document.getElementById("chatInput").value !== ""){
     checkForChats(function(){
@@ -77,8 +77,9 @@ function sendChat(){
     });
     }
 }
+/*
 function repeat(){
     setTimeout(function(){ alert("Hello"); }, 500);
 
-}
+}*/
 

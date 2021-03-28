@@ -1,28 +1,27 @@
 /*jshint esversion: 6 */
-console.log(firebase);
-const auth = firebase.auth();
-const signedinpage = document.getElementById('signedinpage');
-const signedoutpage = document.getElementById('signedoutpage');
-const signinbutton = document.getElementById('signinbutton');
-const signoutbutton = document.getElementById('signoutbutton');
-const userinfo = document.getElementById('userinfo');
-const provider = new firebase.auth.GoogleAuthProvider(); 
+
+var signedinpage = document.getElementById('signedinpage');
+var signedoutpage = document.getElementById('signedoutpage');
+var signinbutton = document.getElementById('signinbutton');
+var signoutbutton = document.getElementById('signoutbutton');
+var userinfo = document.getElementById('userinfo');
+var provider = new firebase.auth.GoogleAuthProvider(); 
 
 signinbutton.onclick = () => auth.signInWithPopup(provider);
 signoutbutton.onclick = () => auth.signOut(); 
-const db = firebase.firestore(); 
-let usersref; 
-let unsubscribe; 
+var db = firebase.firestore(); 
+var usersref; 
+var unsubscribe; 
 
-var listOfQuestions = document.getElementsByClassName('question');
+var listOfQuestions = Array.from(document.getElementsByClassName('question'));
 var qNum = -1;
 
 //happens whenever a quesiton is clicked.
 function questionClick(element){ 
     
-    
+    console.log(listOfQuestions);
     qNum = listOfQuestions.indexOf(element);
-    window.location = window.location+"/"+qNum; 
+    window.location = window.location+"room/"+qNum+"/index.html"; 
     /* var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200) {
@@ -34,7 +33,10 @@ function questionClick(element){
     }
     xhttp.open("GET","addToQueue.php?qNum=" + qNum + "&id=" + id);
     xhttp.send();*/
+
+    
 }
+var auth = firebase.auth();
 auth.onAuthStateChanged(user =>{
     if(user) //signedin
     {

@@ -1,4 +1,6 @@
 /* card */
+
+
 const card = document.querySelector(".card__inner");
 const roomNum= 2; 
 card.addEventListener("click", function (e) {
@@ -83,7 +85,6 @@ function scrollToBottom (id) {
     var div = document.getElementById(id);
     div.scrollTop = div.scrollHeight - div.clientHeight;
  }
-
 
 
 
