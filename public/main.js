@@ -1,3 +1,6 @@
+
+
+
 function toggleButton(element){
     //var allTopics = [].slice.call(element.parentElement.childNodes);
     var topic = element.parentElement;

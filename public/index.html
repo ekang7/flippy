@@ -43,7 +43,7 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
   </script>
-  <script src="https://unpkg.com/quickblox@2.13.0/quickblox.min.js"></script>
+ 
 
 </head>
 
@@ -129,51 +129,37 @@
   
   <!--CARD-->>
 
-  <div class = "card">
-
-    <div class="card__inner">
-
+  <div class="card">
+		<div class="card__inner">
 			<div class="card__face card__face--front">
-        <div class="card__content">
-          <div class="card__header"> 
-              <h2>[hi prompt here]</h2>
-          </div>
-          <div class="card__body">
-            <form class="box" id = "chatForm" onsubmit="sendChat()" autocomplete="off" style = "scroll-behavior: smooth;">
-            <input id = "chatInput" type="text" name="cHInput" placeholder="your answer...">
-            <button type="submit" value="" id = "chatSend" class = "fas fa-paper-plane" value ="Login">Submit</submit>
-          </form>
-          </div>
+				
 
-          <div>
-            <img src= "/chat/logoTransparent.PNG" alt="flipImg"  >
-          </div>
+                
+                <div> <h2> QUESTION </h2> </div>
+                
+                <div class="card__body">
+                    <form class="box" id = "chatForm" onsubmit="sendChat()" autocomplete="off" style = "scroll-behavior: smooth;">
+                    <input id = "chatInput" type="text" name="cHInput" placeholder="Your Answer...">
+                    <button class="submit" type="submit" value="" id = "chatSend" class = "fas fa-paper-plane" value ="Login">SUBMIT</submit>
+                </div>
 
-        </div>
-      </div>
-
-
+                
+			</div>
 			<div class="card__face card__face--back">
 				<div class="card__content">
 					<div class="card__header">
-						<h2>[insert prompt here]</h2>
+						<!--OTHER USER'S NAME-->
+            <h2 id = "yourname">QUESTION</h2>
 					</div>
 					<div class="card__body">
-						<h3>User Name</h3>
-						<p>User's answer: Lorem ipsum <strong>dolor</strong> sit amet, consectetur <strong>adipiscing</strong> elit. Sed id erat a magna lobortis dictum. Nunc est arcu, <strong>lacinia</strong> quis sapien placerat, <strong>laoreet</strong> tincidunt nulla.</p>
+						<h3>JANE DOE</h3>
+            <!--OTHER USER'S PARAGRAPH-->
+						<p>Lorem ipsum <strong>dolor</strong> sit amet, consectetur <strong>adipiscing</strong> elit. Sed id erat a magna lobortis dictum. Nunc est arcu, <strong>lacinia</strong> quis sapien placerat, <strong>laoreet</strong> tincidunt nulla.</p>
 					</div>
-
-          <div>
-            <img src= "/chat/logoTransparent.PNG" alt="flipImg"  >
-           
-          </div>
-
 				</div>
 			</div>
-      
 		</div>
-    
-  </div>
+	</div>
   
 
 </section>

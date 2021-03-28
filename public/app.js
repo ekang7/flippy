@@ -51,6 +51,9 @@ auth.onAuthStateChanged(user =>{
         creationDate: serverTimestamp() 
 
      });   
+     document.getElementById("yourname").innerHTML = "Jane Doe"; 
+
+
     }
     else{
      signedinpage.hidden = true;
