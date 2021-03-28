@@ -1,0 +1,87 @@
+:root {
+    --primary: #FFCE00;
+    --secondary: #FE4880;
+    --dark: #212121;
+    --light: #F3F3F3;
+    --navHeight:75px;
+    --lightThird: #1a9cfe;
+    --darkThird: #4168cd;
+ }
+ html {
+    scroll-behavior: smooth;
+ }
+ body{
+    font-family: 'Anonymous Pro', monospace;
+    width: 100%;
+    background-color: var(--dark);
+    color:var(--light);
+    margin:0px;
+    min-height: 100vh;
+ }
+  
+ #navBar{
+    display:flex;
+    width:100%;
+    height:var(--navHeight);
+    justify-content: center;
+    align-items: stretch;
+    background-color: var(--primary);
+    overflow: hidden;
+ }
+ #navBar *{
+    line-height: var(--navHeight);
+    margin:0;
+    color:black
+ }
+ #moreInfo{
+    width:30px;
+    background-color: var(--secondary);
+    overflow: hidden;
+ }
+  
+ #sendChatBar{
+    height:60px;
+    background-color: var(--primary);
+ }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ .flip-horizontal{
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: fliph; /*IE*/
+    filter: fliph; /*IE*/
+ }
+ .flip-vertical{
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    -ms-filter: fliph; /*IE*/
+    filter: fliph; /*IE*/
+ }
+  
+  
+ img {
+  
+  padding: 10px;
+  width: 200px;
+  position:absolute;
+  top: 90%;
+  left:85%;
+ }
+  
+  
+ 
+ 
